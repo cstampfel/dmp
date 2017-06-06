@@ -21,3 +21,7 @@ To start the docker image execute the following command:
 ```
 docker run -d -p 8080:8080 datascience-web
 ```
+
+### Website
+
+You can view the website if you open http://localhost:8080 in your favorite web browser.
