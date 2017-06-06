@@ -1,0 +1,49 @@
+{
+  "name": "Population Trends for Austria since 1982",
+  "version": "1.0",
+  "date": "05-06-2017",
+  "description": "A Data Management Plan for Assignment 3 for the course Digital Preservation",
+  "researchers": [
+    {
+      "name": "Manuel Roblek",
+      "role": "Developer",
+      "orcid": "http://orcid.org/0000-0002-0727-1415"
+    },
+    {
+      "name": "Christoph Stampfel",
+      "role": "Developer"
+    }
+  ],
+  "dataObjects": [
+    {
+      "title": "Population CSV",
+      "fullname": "OGD_f1197_Bev_Jahresdurchschn_1CSV",
+      "license": "Creative Commons Attribution License",
+      "description": "csv file from data.gov containing population values",
+      "metadata": {
+        "hash": "1234",
+        "format": "csv"
+      },
+      "privacy": {
+        "securityLevel": "Low",
+        "hasPrivacyRelevantInfo": false
+      },
+      "DOI": "0-1-2-3",
+      "storage": "github.com"
+    },
+    {
+      "title": "Source Code",
+      "fullname": "WebApplication Source Code",
+      "description": "source code containing all relevant files for the experiment",
+      "license": "Creative Commons",
+      "repository": "http://github.com",
+      "documentation": "http://github.com",
+      "DOI": "0-1234"
+    },
+    {
+      "title": "Docker",
+      "fullname": "Docker Image",
+      "description": "docker image: build with docker ..."
+    }
+  ]
+}

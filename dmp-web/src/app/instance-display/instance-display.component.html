@@ -1,0 +1,80 @@
+<div class="card">
+  <h3 class="card-header">{{instance.name}} <a routerLink="/">
+    <button class="btn btn-danger float-right">Back</button>
+  </a></h3>
+  <div class="card-block">
+    <p *ngIf="instance.description" class="card-title">{{instance.description}}</p>
+    <p *ngIf="instance.version" class="card-text">Version: {{instance.version}}</p>
+    <p *ngIf="instance.date" class="card-text">Date: {{instance.date}}</p>
+    <p *ngIf="instance.website" class="card-text"><a href="{{instance.website}}">{{instance.website}}</a></p>
+    <h4>Contributers:</h4>
+    <div class="row">
+      <div *ngFor="let researcher of instance.researchers" class="card m-3">
+        <h3 class="card-header">{{researcher.name}}</h3>
+        <div class="card-block">
+          <p *ngIf="researcher.role" class="card-text">{{researcher.role}}</p>
+          <p *ngIf="researcher.orcid" class="card-text"><a href="{{researcher.orcid}}">{{researcher.orcid}}</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<p></p>
+<div class="card mb-3">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li *ngFor="let dataObject of instance.dataObjects" class="nav-item">
+        <button class="nav-link active" (click)=setDataObjectSelection(dataObject)>{{dataObject.title}}</button>
+      </li>
+    </ul>
+  </div>
+  <div *ngFor="let dataObject of instance.dataObjects">
+    <div *ngIf="dataObject.fullname==selectedDataObject.fullname" class="card-block">
+      <h4 class="card-title">{{dataObject.fullname}}</h4>
+      <p *ngIf="dataObject.description" class="card-text font-italic">{{dataObject.description}}</p>
+      <p *ngIf="dataObject.license" class="card-text">License: {{dataObject.license}}</p>
+      <p *ngIf="dataObject.storage" class="card-text">Storage Location: {{dataObject.storage}}</p>
+      <p *ngIf="dataObject.DOI" class="card-text">DOI: <a href="{{dataObject.DOI}}">{{dataObject.DOI}}</a></p>
+      <p *ngIf="dataObject.documentation" class="card-text">Documentation: <a href="{{dataObject.documentation}}">{{dataObject.documentation}}</a>
+      </p>
+    </div>
+    <div *ngIf="dataObject.metadata && dataObject.fullname==selectedDataObject.fullname">
+      <div class="card m-3">
+        <div class="card-header" role="tab">
+          <h5 class="mb-0">
+            <a data-toggle="collapse" href="#md_{{dataObject.fullname}}">
+              Metadata
+            </a>
+          </h5>
+        </div>
+        <div [attr.id]="'md_'+dataObject.fullname" class="collapse" role="tabpanel">
+          <div class="card-block">
+            <p *ngIf="dataObject.metadata.format" class="card-text">Format: {{dataObject.metadata.format}}</p>
+            <p *ngIf="dataObject.metadata.hash" class="card-text">Hash: {{dataObject.metadata.hash}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="dataObject.privacy && dataObject.fullname==selectedDataObject.fullname" >
+      <div class="card m-3">
+        <div class="card-header" role="tab">
+          <h5 class="mb-0">
+            <a data-toggle="collapse" href="#pv_{{dataObject.fullname}}">
+              Privacy, Security and Ethics Info
+            </a>
+          </h5>
+        </div>
+        <div [attr.id]="'pv_'+dataObject.fullname" class="collapse" role="tabpanel">
+          <div class="card-block">
+            <p *ngIf="dataObject.metadata.format" class="card-text">SecurityLevel:
+              {{dataObject.privacy.securityLevel}}</p>
+            <p *ngIf="dataObject.metadata.hash" class="card-text">Contains Personal Information:
+              {{dataObject.privacy.hasPrivacyRelevantInfo}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
