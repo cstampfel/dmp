@@ -34,8 +34,9 @@
       <h4 class="card-title">{{dataObject.fullname}}</h4>
       <p *ngIf="dataObject.description" class="card-text font-italic">{{dataObject.description}}</p>
       <p *ngIf="dataObject.license" class="card-text">License: {{dataObject.license}}</p>
-      <p *ngIf="dataObject.storage" class="card-text">Storage Location: {{dataObject.storage}}</p>
+      <p *ngIf="dataObject.storage" class="card-text">Storage Location: <a href="{{dataObject.storage}}">{{dataObject.storage}}</a></p>
       <p *ngIf="dataObject.DOI" class="card-text">DOI: <a href="{{dataObject.DOI}}">{{dataObject.DOI}}</a></p>
+      <p *ngIf="dataObject.repository" class="card-text">Repository: <a href="{{dataObject.repository}}">{{dataObject.repository}}</a>
       <p *ngIf="dataObject.documentation" class="card-text">Documentation: <a href="{{dataObject.documentation}}">{{dataObject.documentation}}</a>
       </p>
     </div>

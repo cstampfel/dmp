@@ -30,6 +30,7 @@ export class SourceCode extends DataObject{
 
 export class Container extends DataObject{
   documentation: string;
+  repository: string;
 }
 
 export class Researcher {

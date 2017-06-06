@@ -18,32 +18,32 @@
     {
       "title": "Population CSV",
       "fullname": "OGD_f1197_Bev_Jahresdurchschn_1CSV",
-      "license": "Creative Commons Attribution License",
+      "license": "Creative Commons License CC BY 3.0 AT",
       "description": "csv file from data.gov containing population values",
       "metadata": {
-        "hash": "1234",
+        "hash": "4F64332BB0F0047F4388F56A7AE56F7C [MD-5]",
         "format": "csv"
       },
       "privacy": {
         "securityLevel": "Low",
         "hasPrivacyRelevantInfo": false
       },
-      "DOI": "0-1-2-3",
-      "storage": "github.com"
+      "storage": "https://github.com/cstampfel/dmp/tree/master/data-science/datascience-importer/src/main/resources"
     },
     {
       "title": "Source Code",
       "fullname": "WebApplication Source Code",
       "description": "source code containing all relevant files for the experiment",
-      "license": "Creative Commons",
-      "repository": "http://github.com",
-      "documentation": "http://github.com",
-      "DOI": "0-1234"
+      "license": "Creative Commons License CC BY 3.0 AT",
+      "repository": "https://github.com/cstampfel/dmp",
+      "documentation": "https://github.com/cstampfel/dmp/wiki",
+      "DOI": "https://doi.org/10.5281/zenodo.801784"
     },
     {
-      "title": "Docker",
+      "title": "Docker Image",
       "fullname": "Docker Image",
-      "description": "docker image: build with docker ..."
+      "description": "Docker Image containing Experiment Result, build with 'docker build . -t datascience-web'",
+      "repository": "https://github.com/cstampfel/dmp"
     }
   ]
 }
