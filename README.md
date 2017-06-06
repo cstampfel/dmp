@@ -1,5 +1,9 @@
 # dmp
 
+## License
+
+The content is licensed under [Creative Commons License CC BY 3.0 AT](https://creativecommons.org/licenses/by/3.0/at/deed.de)
+
 ## data-science
 
 ### Installation
